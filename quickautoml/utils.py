@@ -9,8 +9,12 @@ from quickautoml.exceptions import IncompatibleDataShapeException
 
 def generate_fake_data():
     x, y = make_classification()
-    # x_train, x_test, y_train, y_test
     return train_test_split(x, y, test_size=0.20, random_state=42)
+
+
+def is_file_format_valid(file: str) -> bool:
+    valid_formats = ['.csv', '.xlsx']
+    return file.split(".")[1] in valid_formats
 
 
 def load_json(path: str) -> dict:

@@ -1,3 +1,5 @@
+from argparse import ArgumentParser
+
 from quickautoml.adapters import SKLearnModelsSupplier
 from quickautoml.estimators import Classifier
 from quickautoml.feature_engineering import PandasFeatureEngineer
@@ -17,8 +19,13 @@ def make_classifier():
 
 
 if __name__ == '__main__':
+  parser = ArgumentParser()
+  parser.add_argument("-p", "-path", help="path to the data used to train the model", type=str)
+  args = parser.parse_args()
+
+  path: str = args.path
   estimator = make_classifier()
-  df = pd.read_csv('drebin-215.csv')
+  df = pd.read_csv(path)
 
   default = {
       NaiveModel(name='KNeighbors Classifier', estimator=SKLearnModelsSupplier().get_model('knn-c')): [
