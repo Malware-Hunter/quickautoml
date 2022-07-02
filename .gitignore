@@ -20,6 +20,7 @@ tests/experiment/*.txt
 optuna-example.py
 experiments/datasets/
 scratch.sh
+datasets/
 
 # Build Files
 build

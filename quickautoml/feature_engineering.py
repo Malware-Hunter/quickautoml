@@ -22,7 +22,7 @@ class PandasFeatureEngineer(FeatureEngineer):
     return self
 
   def __count_used_permissions(self):
-    permission_cols = [x for x in self.matrix.columns if 'permission' in x]
+    permission_cols = [x for x in self.matrix.columns if 'permission' in str(x).lower()]
     self.matrix['permissions_used_count'] = self.matrix[self.matrix[permission_cols] == 1].count(axis=1)
     return self
 

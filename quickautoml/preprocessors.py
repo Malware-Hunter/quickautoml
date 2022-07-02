@@ -19,6 +19,14 @@ class PandasDataPreprocessor(DataPreprocessor):
     self.matrix = array(self.matrix)
     return self
 
+  def __fix_label_column(self):
+    benign_label = 0
+    malware_label = 1
+    self.matrix['class'] = self.matrix['class'].apply(
+      lambda raw_label: benign_label if str.lower(raw_label) in ["benign", "b"] else malware_label
+    )
+    return self
+
   def __remove_null_values(self):
     self.matrix = self.matrix.dropna(axis=1, how='all').dropna()
     return self
@@ -26,13 +34,14 @@ class PandasDataPreprocessor(DataPreprocessor):
   def __remove_duplicates(self):
     self.matrix = self.matrix.drop_duplicates()
     return self
-  
+
   def __collect(self):
     return self.matrix
 
   def run(self, matrix: Union[DataFrame, ndarray]):
     self.matrix = matrix
-    return self.__convert_to_dataframe()\
-               .__remove_duplicates()\
-               .__remove_null_values()\
+    return self.__convert_to_dataframe() \
+               .__fix_label_column() \
+               .__remove_duplicates() \
+               .__remove_null_values() \
                .__collect()

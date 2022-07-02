@@ -72,9 +72,6 @@ class Classifier:
       return False
 
   def fit(self, X, y) -> None:
-    # self.x_test = x_test
-    # self.y_test = y_test
-
     scores = {}
 
     for model, params in self.training_config.search_space.items():
@@ -107,7 +104,6 @@ class Classifier:
     del processed_data
 
     return feat_engineered_data
-
 
   @staticmethod
   def __make_report_mapper(report_type: str, scores: dict):
