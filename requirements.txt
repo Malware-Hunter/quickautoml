@@ -25,7 +25,8 @@ debugpy==1.5.1
 decorator==5.1.0
 defusedxml==0.7.1
 distlib==0.3.3
-distributed==2021.6.2
+#distributed==2021.6.2
+distributed
 emcee==3.1.1
 entrypoints==0.3
 filelock==3.4.0
@@ -38,7 +39,8 @@ idna==3.3
 importlib-metadata==4.8.2
 importlib-resources==5.4.0
 ipykernel==6.6.0
-ipython==7.30.1
+#ipython==7.30.1
+ipython
 ipython-genutils==0.2.0
 ipywidgets==7.6.5
 jedi==0.18.1
@@ -65,7 +67,8 @@ nbconvert==6.3.0
 nbformat==5.1.3
 nest-asyncio==1.5.4
 nodeenv==1.6.0
-notebook==6.4.6
+#notebook==6.4.6
+notebook
 optuna==2.10.0
 packaging==21.3
 pandas==1.3.4
@@ -75,7 +78,8 @@ partd==1.2.0
 pbr==5.8.0
 pexpect==4.8.0
 pickleshare==0.7.5
-Pillow==8.4.0
+#Pillow==8.4.0
+Pillow
 platformdirs==2.4.0
 pmlb==1.0.1.post3
 pre-commit==2.16.0
@@ -117,7 +121,8 @@ threadpoolctl==3.0.0
 toml==0.10.2
 tomli==1.2.2
 toolz==0.11.2
-tornado==6.1
+#tornado==6.1
+tornado
 TPOT==0.11.7
 tqdm==4.62.3
 traitlets==5.1.1
